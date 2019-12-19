@@ -1,0 +1,44 @@
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-nav__logo {
+  padding-top: 22px;
+  min-height: 79px;
+}
+
+.main-nav__img-logo {
+  width: 86px;
+  height: 35px;
+}
+
+.main-nav__toggle {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 29px;
+  right: 0;
+  font-size: 0;
+  background: transparent;
+  border: 0;
+
+  &--opened {
+    width: 21px;
+    height: 20px;
+    background: url(../img/menu-close.svg) no-repeat 50% 50%;
+  }
+}
+
+.main-nav__list {
+  width: 100%;
+  background-color: #fff;
+  @include ul-reset;
+}
+
+.main-nav__delivery {
+  display: none;
+}
