@@ -1,0 +1,60 @@
+.about {
+  margin: 0;
+  margin-top: 28px;
+  margin-bottom: 57px;
+}
+
+.about__wrapper {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.about__title {
+  color: #000000;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 31px;
+}
+
+.about__list {
+  @include ul-reset();
+}
+
+.about__item {
+  padding-top: 39px;
+  margin-bottom: 27px;
+  color: #000000;
+  line-height: 20px;
+  background-repeat: no-repeat;
+
+  &--eco {
+    background-image: url(../img/icon-feature-flower.svg);
+    background-position: 10px 0;
+  }
+
+  &--price {
+    background-image: url(../img/icon-feature-money.svg);
+  }
+
+  &--likes {
+    background-image: url(../img/icon-feature-heart.svg);
+    background-position: 7px 7px;
+  }
+
+  &--handmade {
+    background-image: url(../img/icon-feature-ball.svg);
+    background-position: 4px 4px;
+  }
+
+  &--patriot {
+    background-image: url(../img/icon-feature-rocket.svg);
+    background-position: -7px 4px;
+  }
+
+  &--gift {
+    background-image: url(../img/icon-feature-gift.svg);
+    background-position: 3px 3px;
+  }
+}
