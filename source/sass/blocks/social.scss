@@ -1,0 +1,29 @@
+.social {
+  position: relative;
+  padding: 0;
+  margin-bottom: 24px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 260px;
+    height: 1px;
+    background-color: #ececec;
+  }
+}
+
+.social__list {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+  list-style: none;
+}
+
+.social__item {
+  margin: 0;
+  padding: 0;
+  margin: 0 19px;
+  list-style: none;
+}

@@ -1,0 +1,37 @@
+.nav-list__item {
+  border-top: 1px solid #ececec;
+}
+
+.nav-list__link {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 320px;
+  min-height: 79px;
+  font-weight: 700;
+  color: #000;
+  line-height: 24px;
+  text-decoration: none;
+  padding: 27px 0 27px 45px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--search, &--basket {
+    padding-left: 1px;
+  }
+}
+
+.nav-list__svg--basket, .nav-list__svg--search {
+  margin-right: 24px;
+}
+
+.nav-list--ad {
+  display: none;
+}
