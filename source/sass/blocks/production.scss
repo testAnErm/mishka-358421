@@ -1,5 +1,5 @@
 .production {
-  width: 320px;
+  width: $mobile-width;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -7,18 +7,18 @@
 .production__wrapper {
   padding-top: 8px;
   padding-bottom: 33px;
-  border: 1px solid #ececec;
+  border: 1px solid $grey-border;
 }
 
 .production__title {
   position: relative;
-  color: #000000;
+  color: $black;
   font-size: 17px;
   padding-left: 91px;
 }
 
 .production__title-icon {
-  fill: #63d1bb;
+  fill: $aquamarine-lighter;
   position: absolute;
   left: 34px;
   top: 10px;
@@ -50,7 +50,7 @@
 
 .production__description {
   padding: 9px 0 0 34px;
-  color: #444444;
+  color: $color-text;
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;

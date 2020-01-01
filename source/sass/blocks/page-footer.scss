@@ -1,9 +1,9 @@
 .page-footer {
-  background-color: #f1f1f1;
+  background-color: $light-grey;
 }
 
 .page-footer__wrapper {
-  width: 320px;
+  width: $mobile-width;
   display: flex;
   flex-direction: column;
   margin: 0 auto;

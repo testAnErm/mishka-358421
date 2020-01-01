@@ -16,7 +16,7 @@
 }
 
 .reviews__wrapper {
-  width: 320px;
+  width: $mobile-width;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -24,7 +24,7 @@
 .reviews__title {
   margin: 0;
   margin-bottom: 26px;
-  color: #000000;
+  color: $black;
   font-size: 25px;
   font-weight: 700;
   line-height: 25px;
@@ -33,7 +33,7 @@
 .reviews__description {
   margin: 0;
   margin-bottom: 25px;
-  color: #444444;
+  color: $color-text;
   font-size: 15px;
   font-weight: 400;
   line-height: 30px;
@@ -48,12 +48,12 @@
   padding: 0;
   font-size: 17px;
   line-height: 30px;
-  color: #000;
+  color: $black;
 }
 
 .reviews__link {
   font-weight: 400;
-  color: #444;
+  color: $color-text;
   text-decoration: none;
 }
 
@@ -70,7 +70,7 @@
   height: 50px;
   font-size: 0;
   background-color: transparent;
-  border: 1px solid #ececec;
+  border: 1px solid $grey-border;
   cursor: pointer;
 }
 

@@ -16,7 +16,7 @@
 }
 
 .product-week__wrapper {
-  width: 320px;
+  width: $mobile-width;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -29,7 +29,7 @@
 .product-week__name {
   margin: 0;
   margin-bottom: 5px;
-  color: #000000;
+  color: $black;
   font-size: 25px;
   line-height: 30px;
 }
@@ -38,7 +38,7 @@
   margin: 0;
   margin-bottom: 23px;
   order: 1;
-  color: #63d1bb;
+  color: $aquamarine-lighter;
   font-size: 17px;
   line-height: 20px;
   text-transform: uppercase;

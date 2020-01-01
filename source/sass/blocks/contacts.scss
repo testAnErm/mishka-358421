@@ -3,7 +3,7 @@
 }
 
 .contacts__wrapper {
-  width: 320px;
+  width: $mobile-width;
   margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@
 
 .contacts__title {
   margin: 0;
-  color: #000000;
+  color: $black;
   font-size: 18px;
   font-weight: 700;
 }
@@ -27,7 +27,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 30px;
-  color: #444;
+  color: $color-text;
   line-height: 30px;
 }
 
@@ -41,12 +41,12 @@
 .contacts__link {
   display: block;
   position: relative;
-  color: #444;
+  color: $color-text;
   text-decoration: none;
 
   &::after {
     content: "";
-    background-color: #63d1bb;
+    background-color: $aquamarine-lighter;
     position: absolute;
     bottom: 0;
     left: 0;

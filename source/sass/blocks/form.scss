@@ -1,5 +1,5 @@
 .form {
-  width: 320px;
+  width: $mobile-width;
   margin: 0 auto;
 }
 
@@ -12,7 +12,7 @@
 .form__description {
   margin: 0;
   margin-bottom: 25px;
-  color: #444444;
+  color: $color-text;
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
@@ -28,7 +28,7 @@
   margin: 0;
   font-size: 17px;
   line-height: 16px;
-  color: #63d1bb;
+  color: $aquamarine-lighter;
   text-transform: uppercase;
   position: relative;
 
@@ -39,7 +39,7 @@
     right: 0;
     width: 198px;
     height: 1px;
-    background: #62d1ba;
+    background: $aquamarine;
   }
 }
 
@@ -118,13 +118,13 @@
   left: 0;
   width: 40px;
   height: 40px;
-  background: #ffffff;
+  background: $white;
   border-radius: 50%;
-  border: 2px solid #444444;
+  border: 2px solid $color-text;
 }
 
 .form__label-radio:hover::before {
-  border: 2px solid #62d1ba;
+  border: 2px solid $aquamarine;
 }
 
 .form__label-radio:active::before {
@@ -158,7 +158,7 @@
     left: 0;
     width: 40px;
     height: 39px;
-    border: 2px solid #444444;
+    border: 2px solid $color-text;
   }
 
   &:hover::before {
@@ -179,19 +179,19 @@
   height: 10px;
   border-radius: 1px;
   background-color: transparent;
-  border: 3px solid #000000;
+  border: 3px solid $black;
   transform: rotate(-45deg);
   border-top: 0;
   border-right: 0;
-  box-shadow: 1px 1px 0 #ffffff, 0 -1px 0 #ffffff inset;
+  box-shadow: 1px 1px 0 $white, 0 -1px 0 $white inset;
 }
 
 .form__field {
-  color: #444444;
+  color: $color-text;
   background: transparent;
   border: none;
   width: 260px;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid $black;
   padding-bottom: 15px;
 
   &:hover {
@@ -207,12 +207,12 @@
   padding-bottom: 15px;
   padding-top: 17px;
   border: none;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid $black;
 }
 
 .form__field::-webkit-input-placeholder {
   opacity: 0.3;
-  color: #444444;
+  color: $color-text;
   font-size: 17px;
   font-weight: 400;
   line-height: 18px;
@@ -220,7 +220,7 @@
 
 .form__field::-moz-placeholder {
   opacity: 0.3;
-  color: #444444;
+  color: $color-text;
   font-size: 17px;
   font-weight: 400;
   line-height: 18px;
@@ -228,7 +228,7 @@
 
 .form__field:-moz-placeholder {
   opacity: 0.3;
-  color: #444444;
+  color: $color-text;
   font-size: 17px;
   font-weight: 400;
   line-height: 18px;
@@ -236,7 +236,7 @@
 
 .form__field:-ms-input-placeholder {
   opacity: 0.3;
-  color: #444444;
+  color: $color-text;
   font-size: 17px;
   font-weight: 400;
   line-height: 18px;
@@ -256,7 +256,7 @@
   margin-top: 9px;
   height: 142px;
   resize: none;
-  border: 2px solid #444444;
+  border: 2px solid $color-text;
   padding: 15px;
 
   &:hover {
@@ -280,7 +280,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-  color: #444444;
+  color: $color-text;
   margin-top: 11px;
   margin-bottom: 31px;
 }

@@ -1,5 +1,5 @@
 .catalog {
-  width: 320px;
+  width: $mobile-width;
   margin: 0 auto;
 }
 
@@ -18,7 +18,7 @@
 .catalog__item {
   margin-bottom: 30px;
   list-style: none;
-  border: 1px solid #ececec;
+  border: 1px solid $grey-border;
   cursor: pointer;
 }
 
@@ -39,7 +39,7 @@
   margin-bottom: 6px;
   font-size: 17px;
   line-height: 24px;
-  color: #000;
+  color: $black;
 }
 
 .catalog__description {
@@ -54,7 +54,7 @@
   padding-top: 21px;
   font-size: 15px;
   font-weight: 800;
-  border-top: 1px solid #ececec;
+  border-top: 1px solid $grey-border;
   display: flex;
   justify-content: space-between;
 }
@@ -62,7 +62,7 @@
 .catalog__price {
   font-size: 15px;
   line-height: 24px;
-  color: #000;
+  color: $black;
 }
 
 .catalog__button {
