@@ -14,31 +14,130 @@
 .main-nav__img-logo {
   width: 86px;
   height: 35px;
-}
 
-.main-nav__toggle {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 29px;
-  right: 0;
-  font-size: 0;
-  background: transparent;
-  border: 0;
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
 
-  &--opened {
-    width: 21px;
-    height: 20px;
-    background: url(../img/menu-close.svg) no-repeat 50% 50%;
+  &:active {
+    opacity: 0.3;
   }
 }
 
 .main-nav__list {
   width: 100%;
   background-color: $white;
+
   @include ul-reset;
 }
 
 .main-nav__delivery {
   display: none;
 }
+
+@media (max-width: $tablet-width) {
+  .main-nav__toggle--closed ~ .main-nav__list {
+    display: none;
+  }
+
+  .main-nav__toggle--nojs ~ .nav-list__list {
+    display: block;
+  }
+
+  .main-nav__toggle {
+    content: "";
+    position: absolute;
+    display: block;
+    font-size: 0;
+    background: transparent;
+    border: 0;
+    right: 20px;
+    padding: 10px;
+    cursor: pointer;
+
+    &--opened {
+      top: 18px;
+      width: 41px;
+      height: 40px;
+      background: url(../img/menu-close.svg) no-repeat 50% 50%;
+    }
+
+    &--closed {
+      top: 21px;
+      width: 40px;
+      height: 34px;
+      background: url(../img/menu-open.svg) no-repeat 50% 50%;
+    }
+
+    &--nojs {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    min-width: 668px;
+  }
+
+  .main-nav__img-logo {
+    width: 112px;
+    height: 46px;
+  }
+
+  .main-nav__logo {
+    flex-grow: 1;
+    margin-bottom: 17px;
+    margin-right: 190px;
+
+    min-height: 88px;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav__span-hidden {
+    @include visually-hidden;
+  }
+
+  .main-nav__delivery {
+    display: block;
+    order: 4;
+
+    margin: 0;
+    padding-top: 2px;
+
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $color-text;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav__img-logo {
+    width: 149px;
+    height: 72px;
+  }
+
+  .main-nav__logo {
+    order: 2;
+    flex-grow: 0;
+
+    margin: 0;
+    padding-top: 9px;
+  }
+
+  .main-nav__delivery {
+    order: 5;
+    padding-top: 17px;
+  }
+}
+
