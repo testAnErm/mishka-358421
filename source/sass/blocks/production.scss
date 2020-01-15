@@ -1,7 +1,6 @@
 .production {
   width: $mobile-width;
-  margin: 0 auto;
-  padding: 0 30px;
+  @include container;
 }
 
 .production__wrapper {

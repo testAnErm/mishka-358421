@@ -6,8 +6,7 @@
   width: $mobile-width;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 0 30px;
+  @include container;
 }
 
 .page-footer__logo {
