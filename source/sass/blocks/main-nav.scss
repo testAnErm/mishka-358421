@@ -36,7 +36,7 @@
   display: none;
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $tablet-width - 1) {
   .main-nav__toggle--closed ~ .main-nav__list {
     display: none;
   }
