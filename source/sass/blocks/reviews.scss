@@ -1,7 +1,8 @@
 .reviews {
   position: relative;
   padding-bottom: 49px;
-  margin-top: 28px;
+  margin-top: 23px;
+  margin-bottom: 38px;
 
   &::after {
     position: absolute;
@@ -88,7 +89,7 @@
 
 @media (min-width: $tablet-width) {
   .reviews {
-    margin-bottom: 48px;
+    margin-bottom: 14px;
 
     &::after {
       height: 16px;
@@ -104,8 +105,7 @@
   }
 
   .reviews__wrapper {
-    padding-bottom: 99px;
-
+    padding-bottom: 86px;
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-size: 350px 457px;
