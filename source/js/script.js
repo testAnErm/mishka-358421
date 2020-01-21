@@ -11,3 +11,29 @@ navToogle.addEventListener('click', function () {
   }
 
 });
+
+ymaps.ready(function () {
+  var myMap = new ymaps.Map('map', {
+      center: [59.938907, 30.323083],
+      zoom: 17
+    }, {
+      searchControlProvider: 'yandex#search'
+    }),
+
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+      hintContent: 'Мишка – милые штуки ручной работы для дома',
+      balloonContent: '\n' +
+        'г. Санкт-Петербург,\n' +
+        'ул. Большая\n' +
+        'Конюшенная,\n' +
+        'д. 19/8, офис 101'
+    }, {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/icon-map-pin.svg',
+      iconImageSize: [67, 100],
+      iconImageOffset: [-23, -83]
+    });
+  myMap.geoObjects
+    .add(myPlacemark)
+});
+
