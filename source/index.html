@@ -108,12 +108,16 @@
           </tr>
         </table>
         <picture>
+          <source type="image/webp" media="(min-width: 1150px)"
+                  srcset="img/triple-set-desktop@1x.webp 1x, img/triple-set-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)"
+                  srcset="img/triple-set-tablet@1x.webp 1x, img/triple-set-tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/triple-set-mobile@1x.webp 1x, img/triple-set-mobile@2x.webp 2x">
           <source media="(min-width: 1150px)"
-                  srcset="./img/triple-set-desktop@1x.jpg 1x, ./img/triple-set-desktop@2x.jpg 2x">
-          <source media="(min-width: 768px)"
-                  srcset="./img/triple-set-tablet@1x.jpg 1x, ./img/triple-set-tablet@2x.jpg 2x">
-          <img class="product__image" src="./img/triple-set-mobile@1x.jpg" srcset="./img/triple-set-mobile@2x.jpg 2x"
-               alt="Вязаные корзинки">
+                  srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
+          <img class="product__image" src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x"
+               width="260" height="315" alt="Вязаные корзинки">
         </picture>
         <p class="product__price">Цена: 990 руб.</p>
         <a class="product__order button" href="#">Заказать</a>
@@ -158,62 +162,73 @@
             <b class="reviews__author-name">Анастасия Красильникова</b>
             <a class="reviews__link" href="#">@misssssiskras</a>
           </cite>
+          <div class="reviews__control">
+            <button class="reviews__button reviews__button--prev">
+              <svg class="reviews__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                   width="50" height="26" viewBox="0 0 50 26">
+                <g>
+                  <g>
+                    <image width="50" height="26"
+                           xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAaCAYAAAD1wA/qAAAA2ElEQVRYR93Y4Q2EIAwF4OcGN4qOcJucEzmCbnIj3I1yI5gmkjREhF5C7Ku/AflsC8gA+7MCGAE8Afzs3fv0GIzDCuJ19Pl6wlggGpH8gpmMH6NL81bIGUImNAPYuszMOGgLxD1CzDUIBaIGoUGUIA8Ai1qddLa6qYm8hPLUEsT72Cfytm4ReURoERpCjUiQK4RxNb+vudTIp1AT983qjzeHgoRJLQlkiGJPGUmNCbkh6sjQH1H0wkd/aKTE1P5HBEURmRYIBaYVUsLQXT6kuglxHaQx7i7odtTpMhexE0kmAAAAAElFTkSuQmCC"/>
+                  </g>
+                </g>
+              </svg>
+              <span class="visually-hidden">Предыдущий отзыв</span>
+            </button>
+            <button class="reviews__button reviews__button--next">
+              <svg class="reviews__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                   width="50" height="26" viewBox="0 0 50 26">
+                <g>
+                  <g>
+                    <image width="50" height="26"
+                           xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAaCAYAAAD1wA/qAAAAz0lEQVRYR+3Y0Q3CMAxF0dsNGIUVGIENYLKyCWxAR2EDkCtS8UHBthTxEtFvN+1xnMTKgNazAc7ABBwjvzZEgivHFsT2+Z1TBKMEuQIFUXLmxihBDsD4ZtZdGCWIGdIYNUgaowhJYVQhnzC2Ne+A2+t6UoaEMOoQN6YFiAtjkHvlE7v28POa6QFiiZr+kNr1Ehh/Ka3AOz8LXWtdljOlhV3rK8LSqw5xIdQha4gLsG+lRQm384qlFUYollYKoQZJI9Qg3Vw+dHMdZBWSvqB7AHHJO9mAcJZCAAAAAElFTkSuQmCC"/>
+                  </g>
+                </g>
+              </svg>
+              <span class="visually-hidden">Следующий отзыв</span>
+            </button>
+          </div>
+          <a class="reviews__write button" href="#">Написать</a>
         </article>
-        <div class="reviews__control">
-          <button class="reviews__button reviews__button--prev">
-            <svg class="reviews__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="50" height="26" viewBox="0 0 50 26">
-              <g>
-                <g>
-                  <image width="50" height="26"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAaCAYAAAD1wA/qAAAA2ElEQVRYR93Y4Q2EIAwF4OcGN4qOcJucEzmCbnIj3I1yI5gmkjREhF5C7Ku/AflsC8gA+7MCGAE8Afzs3fv0GIzDCuJ19Pl6wlggGpH8gpmMH6NL81bIGUImNAPYuszMOGgLxD1CzDUIBaIGoUGUIA8Ai1qddLa6qYm8hPLUEsT72Cfytm4ReURoERpCjUiQK4RxNb+vudTIp1AT983qjzeHgoRJLQlkiGJPGUmNCbkh6sjQH1H0wkd/aKTE1P5HBEURmRYIBaYVUsLQXT6kuglxHaQx7i7odtTpMhexE0kmAAAAAElFTkSuQmCC"/>
-                </g>
-              </g>
-            </svg>
-            <span class="visually-hidden">Предыдущий отзыв</span>
-          </button>
-          <button class="reviews__button reviews__button--next">
-            <svg class="reviews__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="50" height="26" viewBox="0 0 50 26">
-              <g>
-                <g>
-                  <image width="50" height="26"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAaCAYAAAD1wA/qAAAAz0lEQVRYR+3Y0Q3CMAxF0dsNGIUVGIENYLKyCWxAR2EDkCtS8UHBthTxEtFvN+1xnMTKgNazAc7ABBwjvzZEgivHFsT2+Z1TBKMEuQIFUXLmxihBDsD4ZtZdGCWIGdIYNUgaowhJYVQhnzC2Ne+A2+t6UoaEMOoQN6YFiAtjkHvlE7v28POa6QFiiZr+kNr1Ehh/Ka3AOz8LXWtdljOlhV3rK8LSqw5xIdQha4gLsG+lRQm384qlFUYollYKoQZJI9Qg3Vw+dHMdZBWSvqB7AHHJO9mAcJZCAAAAAElFTkSuQmCC"/>
-                </g>
-              </g>
-            </svg>
-            <span class="visually-hidden">Следующий отзыв</span>
-          </button>
-        </div>
       </div>
-      <a class="reviews__write button" href="#">Написать</a>
+
     </div>
   </section>
   <section class="contacts">
-    <div class="contacts__wrapper">
-      <div class="contacts__information">
+    <div class="contacts__information">
+      <div class="contacts__wrapper">
         <h2 class="contacts__title">Контакты</h2>
-        <table class="contacts__list">
-          <tr>
-            <td class="contacts__field">e-mail:</td>
-            <td class="contacts__value">
-              <a class="contacts__link" href="#">info@mimimishkashop.ru</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="contacts__field">адрес:</td>
-            <td class="contacts__value">г. Санкт-Петербург,
-              <br>ул. Большая
-              <br>Конюшенная,
-              <br>д. 19/8, офис 101
-            </td>
-          </tr>
-        </table>
+        <ul class="contacts__list">
+          <li class="contacts__field">e-mail:</li>
+          <li class="contacts__value">
+            <a class="contacts__link" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+          </li>
+        </ul>
+        <ul class="contacts__list">
+          <li class="contacts__field">адрес:</li>
+          <li class="contacts__value">г. Санкт-Петербург,
+            <br>ул. Большая
+            Конюшенная,
+            <br>д. 19/8, офис 101
+          </li>
+        </ul>
       </div>
-      <div class="contacts__map">
-        <img class="contacts__image" alt="Адрес магазина г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101"
-             src="img/map-mobile-offline.png">
-      </div>
+    </div>
+    <div class="contacts__map">
+      <div class="contacts__map-api" id="map" tabindex="-1"></div>
+      <picture>
+        <source type="image/webp" media="(min-width: 1150px)"
+                srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+        <source type="image/webp" media="(min-width: 768px)"
+                srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+        <source type="image/webp" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
+        <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
+        <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
+        <img class="contacts__image" src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" width="320"
+             height="457" alt="Адрес магазина г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101">
+      </picture>
+    </div>
+    <div class="contacts__button-wrapper">
       <a class="contacts__button button" href="#">Напишите нам</a>
     </div>
   </section>
@@ -319,6 +334,7 @@
   </form>
 </section>
 <script src='js/picturefill.min.js' async></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=29b07bac-3c67-49d6-95bb-206549100c7d&amp;lang=ru_RU"></script>
 <script src='js/script.min.js'></script>
 </body>
 </html>
