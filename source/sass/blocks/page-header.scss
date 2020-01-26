@@ -11,6 +11,10 @@
     background-color: #ffffff;
     box-shadow: 0 1px 0 0 $grey-border, inset 0 1px 0 0 $grey-border;
   }
+
+  &--bg-color {
+    background-color: $light-grey;
+  }
 }
 
 @media (min-width: $tablet-width) {
