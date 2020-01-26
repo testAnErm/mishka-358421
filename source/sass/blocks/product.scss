@@ -1,47 +1,122 @@
 .product__description {
   margin: 0;
   margin-bottom: 18px;
-  color: #444444;
+  color: $color-text;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
 }
 
 .product__list {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
+  width: 100%;
   border-collapse: collapse;
-  color: #444444;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
 }
 
-.product__list tr {
-  border-bottom: 1px solid #ececec;
+.product__item {
+  padding-bottom: 20px;
+  height: 39px;
+  width: 100%;
+
+  font-size: 15px;
+  text-decoration: none;
+  color: $color-text;
+  font-weight: 400;
+  line-height: 20px;
+  border-bottom: 1px solid $grey-border;
 }
 
 .product__field {
-  padding: 9px 0 10px;
-}
-
-.product__value {
-  padding: 0 0 0 30px;
+  padding-right: 28px;
+  width: 68px;
 }
 
 .product__image {
-  width: 260px;
-  height: 315px;
+  margin-bottom: 18px;
+  width: 100%;
 }
 
 .product__price {
-  margin-bottom: 27px;
+  margin-top: 0;
+  margin-bottom: 26px;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
   text-align: center;
-  color: #444444;
+  color: $color-text;
 }
 
 .product__order {
   display: block;
-  width: 260px;
-  border: 2px solid #444444;
-  background-color: #ffffff;
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .product__description {
+    margin-bottom: 36px;
+
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .product__list {
+    margin-bottom: 56px;
+  }
+
+  .product__description,
+  .product__list,
+  .product__price,
+  .product__order {
+    width: calc(100% - 44px - 333px);
+  }
+
+  .product__image {
+    position: absolute;
+    bottom: 66px;
+    left: calc(100% - 333px - 50px);
+    margin: 0;
+    width: 333px;
+  }
+
+  .product__price {
+    margin-bottom: 32px;
+
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .product__description,
+  .product__list,
+  .product__price,
+  .product__order {
+    margin-left: 175px;
+    width: 292px;
+  }
+
+  .product__image {
+    margin: 0;
+    position: absolute;
+    bottom: 93px;
+    left: calc(100% - 525px - 50px);
+    width: 525px;
+  }
+
+  .product__description {
+    margin-bottom: 47px;
+
+    line-height: 30px;
+  }
+
+  .product__list {
+    margin-bottom: 112px;
+  }
+
+  .product__price {
+    margin-bottom: 35px;
+
+    line-height: 24px;
+  }
 }

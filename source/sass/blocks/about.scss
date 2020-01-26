@@ -5,13 +5,11 @@
 }
 
 .about__wrapper {
-  width: 320px;
-  margin: 0 auto;
-  padding: 0 30px;
+  @include container;
 }
 
 .about__title {
-  color: #000000;
+  color: $black;
   font-size: 25px;
   font-weight: 700;
   line-height: 30px;
@@ -25,7 +23,7 @@
 .about__item {
   padding-top: 39px;
   margin-bottom: 27px;
-  color: #000000;
+  color: $black;
   line-height: 20px;
   background-repeat: no-repeat;
 
@@ -56,5 +54,75 @@
   &--gift {
     background-image: url(../img/icon-feature-gift.svg);
     background-position: 3px 3px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .about {
+    margin-bottom: 28px;
+  }
+
+  .about__title {
+    font-size: 43px;
+    line-height: 50px;
+    margin-bottom: 48px;
+    margin-left: -5px;
+  }
+
+  .about__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .about__item {
+    padding-top: 35px;
+    margin-bottom: 36px;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    flex-basis: 50%;
+
+
+    &--eco {
+      order: 1;
+    }
+
+    &--handmade {
+      order: 2;
+    }
+
+    &--price {
+      order: 3;
+    }
+
+    &--patriot {
+      order: 4;
+    }
+
+    &--likes {
+      order: 5;
+    }
+
+    &--gift {
+      order: 6;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .about {
+    margin-bottom: 34px;
+  }
+
+  .about__wrapper {
+    padding: 0 225px;
+  }
+
+  .about__title {
+    margin-bottom: 49px;
+    font-size: 53px;
+    line-height: 57px;
   }
 }

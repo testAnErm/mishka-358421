@@ -1,13 +1,13 @@
 .product-week {
+  margin-bottom: 28px;
+  padding-top: 28px;
   position: relative;
-  padding-bottom: 40px;
-  margin-top: 28px;
 
   &::after {
     position: absolute;
     content: "";
     bottom: 0;
-    background-image: url(../img/zigzag-line.svg);
+    background-image: url(../img/bg-zigzag-line.svg);
     height: 6px;
     width: 100%;
     background-repeat: repeat-x;
@@ -16,9 +16,11 @@
 }
 
 .product-week__wrapper {
-  width: 320px;
-  margin: 0 auto;
-  padding: 0 30px;
+  @include container;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
 }
 
 .product-week__titles {
@@ -28,18 +30,98 @@
 
 .product-week__name {
   margin: 0;
-  margin-bottom: 5px;
-  color: #000000;
+  margin-bottom: 6px;
+  color: $black;
   font-size: 25px;
   line-height: 30px;
 }
 
 .product-week__title {
   margin: 0;
-  margin-bottom: 23px;
+  margin-bottom: 22px;
   order: 1;
-  color: #63d1bb;
+  color: $aquamarine-lighter;
   font-size: 17px;
   line-height: 20px;
   text-transform: uppercase;
+}
+
+@media (min-width: $tablet-width) {
+  .product-week {
+    margin-bottom: 52px;
+    padding-top: 0;
+
+    &::after {
+      height: 16px;
+      background-size: auto 16px;
+      background-position-x: 11px;
+    }
+  }
+
+  .product-week__wrapper {
+    padding-bottom: 66px;
+  }
+
+  .product-week__titles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-bottom: 42px;
+    width: 100%;
+  }
+
+  .product-week__title {
+    margin: 0;
+    margin-right: 22px;
+    padding-top: 8px;
+    text-align: center;
+
+    width: 80px;
+  }
+
+  .product-week__name {
+    font-size: 43px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .product-week {
+    margin-bottom: 58px;
+
+    &::after {
+      height: 21px;
+      background-size: auto 21px;
+      background-position-x: 30px;
+    }
+  }
+
+  .product-week__wrapper {
+    justify-content: flex-start;
+    padding-bottom: 95px;
+  }
+
+  .product-week__titles {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-bottom: 47px;
+  }
+
+  .product-week__title {
+    order: -1;
+
+    margin-left: 42px;
+    padding-top: 13px;
+  }
+
+  .product-week__name {
+    margin-bottom: 4px;
+    z-index: 2;
+    font-size: 53px;
+    line-height: 57px;
+    margin-left: 24px;
+  }
 }

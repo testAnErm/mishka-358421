@@ -1,5 +1,31 @@
 .page-header {
-  width: $mobile-width;
-  margin: 0 auto;
-  padding: 0 30px;
+  position: relative;
+  background-color: #f9f9f9;
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height: 79px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 0 $grey-border, inset 0 1px 0 0 $grey-border;
+  }
+
+  &--bg-color {
+    background-color: $light-grey;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-header::before {
+    height: 89px;
+    box-shadow: none;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .page-header__wrapper {
+    @include container;
+  }
 }

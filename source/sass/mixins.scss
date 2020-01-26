@@ -3,3 +3,51 @@
   padding: 0;
   list-style: none;
 }
+
+@mixin container {
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: $desktop-width;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+}
+
+@mixin banner($bg-size-height: 24px, $bg-position-x: 0) {
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    content: "";
+    bottom: -12px;
+    width: 100%;
+    height: 24px;
+
+    background-size: 768px $bg-size-height;
+    background-position-x: $bg-position-x;
+    background-image: url("../img/bg-zigzag-fill.svg");
+    background-repeat: repeat-x;
+  }
+
+  @media (min-width: $desktop-width) {
+    bottom: -17px;
+    height: 34px;
+    background-size: auto $bg-size-height;
+    background-position-x: $bg-position-x;
+  }
+}
