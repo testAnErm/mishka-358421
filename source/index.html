@@ -70,7 +70,7 @@
   </div>
 </header>
 <main class="page-main">
-  <h1 class="visually-hidden">Мишка – милые штуки ручной работы для дома</h1>
+  <h1 class="page-main__title">Мишка – милые штуки ручной работы для дома</h1>
   <section class="products">
     <div class="products__wrapper">
       <h2 class="products__title">Милые штуки ручной<br> работы для дома</h2>
@@ -173,7 +173,7 @@
                   </g>
                 </g>
               </svg>
-              <span class="visually-hidden">Предыдущий отзыв</span>
+              Предыдущий отзыв
             </button>
             <button class="reviews__button reviews__button--next">
               <svg class="reviews__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -185,7 +185,7 @@
                   </g>
                 </g>
               </svg>
-              <span class="visually-hidden">Следующий отзыв</span>
+              Следующий отзыв
             </button>
           </div>
           <a class="reviews__write button" href="#">Написать</a>
@@ -239,8 +239,8 @@
       <a class="page-footer__link" href="#">
         <svg class="page-footer__svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
              width="102" height="34"
-             aria-label="Логотип Мишка">
-          viewBox="0 0 102 34">
+             aria-label="Логотип Мишка"
+             viewBox="0 0 102 34">
           <g>
             <g>
               <image width="102" height="34"
@@ -308,31 +308,22 @@
     </div>
   </div>
 </footer>
-<section class="modal modal--closed visually-hidden">
-  <h2 class="modal__title">Добавить<br> в корзину</h2>
-  <form class="modal__form form-modal" action="http://echo.htmlacademy.ru" method="post">
-    <fieldset class="form-modal__group">
-      <div class="form-modal__wrapper">
-        <span class="form-modal__title">Выберите размер:</span>
-        <div class="form-modal__list form-radio">
-          <div class="form-radio__item">
-            <label class="form-radio__label" for="size-s">S</label>
-            <input class="form-radio__input" type="radio" id="size-s" name="size">
-          </div>
-          <div class="form-radio__item">
-            <label class="form-radio__label" for="size-m">M</label>
-            <input class="form-radio__input" type="radio" id="size-m" name="size">
-          </div>
-          <div class="form-radio__item">
-            <label class="form-radio__label" for="size-l">L</label>
-            <input class="form-radio__input" type="radio" id="size-l" name="size">
-          </div>
-        </div>
-      </div>
-    </fieldset>
-    <a class="modal__submit" href="#">Добавить</a>
+<section class="modal modal--closed">
+  <h2 class="modal__title">Добавить в корзину</h2>
+  <form class="modal__form" action="http://echo.htmlacademy.ru" method="post">
+    <p class="modal__description">Выберите размер:</p>
+    <div class="modal__wrapper">
+      <input class="modal__input" type="radio" id="size-s" name="size" checked>
+      <label class="modal__label" for="size-s">S</label>
+      <input class="modal__input" type="radio" id="size-m" name="size">
+      <label class="modal__label" for="size-m">M</label>
+      <input class="modal__input" type="radio" id="size-l" name="size">
+      <label class="modal__label" for="size-l">L</label>
+    </div>
+    <a class="modal__submit button" href="#">Добавить</a>
   </form>
 </section>
+<div class="overlay"></div>
 <script src='js/picturefill.min.js' async></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=29b07bac-3c67-49d6-95bb-206549100c7d&amp;lang=ru_RU"></script>
 <script src='js/script.min.js'></script>
