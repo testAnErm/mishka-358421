@@ -4,153 +4,167 @@
   <meta charset="utf-8">
   <title>HTML Academy: Мишка</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
   <link href="css/style.min.css" rel="stylesheet">
 </head>
 <body>
-<header class="page-header">
-  <nav class="main-nav">
-    <a class="main-nav__logo" href="index.html">
-      <img class="main-nav__img-logo" src="img/logo-mobile.svg" width="86" height="35" alt="Логотип">
-    </a>
-    <button class="main-nav__toggle main-nav__toggle--opened main-nav__toggle--nojs">
-      <span class="visually-hidden">Открыть меню</span>
-    </button>
-    <ul class="main-nav__list nav-list nav-list--left">
-      <li class="nav-list__item">
-        <a class="nav-list__link" href="catalog.html">Каталог товаров</a>
-      </li>
-      <li class="nav-list__item nav-list__item--order">
-        <a class="nav-list__link">Вязание на заказ</a>
-      </li>
-    </ul>
-    <ul class="main-nav__list nav-list nav-list--right">
-      <li class="nav-list__item">
-        <a class="nav-list__link nav-list__link--search" href="search.html">
-          <svg class="nav-list__svg nav-list__svg--search" xmlns="http://www.w3.org/2000/svg"
-               xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
-            <g>
-              <g opacity=".2">
-                <image width="18" height="18"
-                       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABcklEQVQ4T7VU4VnCMBC9lwnYoAc6ACPABo5AJ8BOoE4gTmA3ECeADWQALUcnqAvk/BKSfmkA8Y/9l9zdy7t37wrKvhvmhaouiWiahdYGePkU2eY17ox4ycxTo/p6BiCvW1ugFJEuDXigALIholEIdqRakzHf/mxtQcAiKdxZYJ6CeaBJUXz0TFRra0yVv8jMbFTfkrxV07ZVBEfQxLVEjkXTtuU5DQLzkVF1zL1+FhiLiHiNEjZdCAx6z0FvmWf2COYe7lk5IM0vLzGK9/FxJdruD4d5ZHQEAp4akcdrIC4+LooNiGb/DHRF6JTppCj2zjU5IzfSu3wKl1ocTBmoGpGVV2YwBaITo6WAmXEHU46G7FkR0c4AVb5Tgclz7/5MirgiA6MFFjsl8p4CETtN8nYBlF8idcg5hpl5ZKx9IOD+Fwu4HVynexfB+u2PxX6nrF0qMPiNAHi3RLXbwYHg3oIoT4D+YkiXcwL218JzeQlY9wPrT+WEpr5E8AAAAABJRU5ErkJggg=="/>
+<header class="page-header page-header--bg-color">
+  <div class="page-header__wrapper">
+    <nav class="main-nav">
+      <a class="main-nav__logo" href="index.html">
+        <picture>
+          <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+          <img class="main-nav__img-logo" src="img/logo-mobile.svg" width="86" height="35"
+               alt="Интернет-магазин «Мишка»">
+        </picture>
+      </a>
+      <button class="main-nav__toggle main-nav__toggle--closed main-nav__toggle--nojs">Открыть меню</button>
+      <ul class="main-nav__list nav-list nav-list--left">
+        <li class="nav-list__item nav-list__item--catalog">
+          <a class="nav-list__link nav-list__link--catalog" href="catalog.html">Каталог товаров</a>
+        </li>
+        <li class="nav-list__item nav-list__item--order">
+          <a class="nav-list__link nav-list__link--order">Вязание на заказ</a>
+        </li>
+      </ul>
+      <ul class="main-nav__list nav-list nav-list--right">
+        <li class="nav-list__item nav-list__item--search">
+          <a class="nav-list__link nav-list__link--search" href="search.html">
+            <svg class="nav-list__svg nav-list__svg--search" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+              <g>
+                <g opacity=".2">
+                  <image width="18" height="18"
+                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABcklEQVQ4T7VU4VnCMBC9lwnYoAc6ACPABo5AJ8BOoE4gTmA3ECeADWQALUcnqAvk/BKSfmkA8Y/9l9zdy7t37wrKvhvmhaouiWiahdYGePkU2eY17ox4ycxTo/p6BiCvW1ugFJEuDXigALIholEIdqRakzHf/mxtQcAiKdxZYJ6CeaBJUXz0TFRra0yVv8jMbFTfkrxV07ZVBEfQxLVEjkXTtuU5DQLzkVF1zL1+FhiLiHiNEjZdCAx6z0FvmWf2COYe7lk5IM0vLzGK9/FxJdruD4d5ZHQEAp4akcdrIC4+LooNiGb/DHRF6JTppCj2zjU5IzfSu3wKl1ocTBmoGpGVV2YwBaITo6WAmXEHU46G7FkR0c4AVb5Tgclz7/5MirgiA6MFFjsl8p4CETtN8nYBlF8idcg5hpl5ZKx9IOD+Fwu4HVynexfB+u2PxX6nrF0qMPiNAHi3RLXbwYHg3oIoT4D+YkiXcwL218JzeQlY9wPrT+WEpr5E8AAAAABJRU5ErkJggg=="/>
+                </g>
               </g>
-            </g>
-          </svg>
-          Поиск по сайту
-        </a>
-      </li>
-      <li class="nav-list__item">
-        <a class="nav-list__link nav-list__link--basket" href="basket.html">
-          <svg class="nav-list__svg nav-list__svg--basket" xmlns="http://www.w3.org/2000/svg"
-               xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18" viewBox="0 0 21 18">
-            <g>
-              <g opacity=".2">
-                <image width="21" height="18"
-                       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAASCAYAAAC0EpUuAAABgUlEQVQ4T52U4XHCMAyF38t1AFgAi9AB6AawAWwAE7RMUJiAdgLYoGwAG5QBSrBZoAzQi3oOSXqkCQT8V9JnS+/JxIUTGvMBYBCTbWutFREJVPcAVpFzw6pSVgUeRXqx6hqAjZxrZ3mhMR4qAdn/snZTVl8JbRuzJtAjOd5Zu8yKOyIjVV0osNk7168N7YgMVNW3vo2ceyoWhsZ8AuiSHO6sXRXjpS+91mLVaDL4P2id9nxx1Xh8jCLSfQAa2S2x6sILAXISANsqIWOgC9W5FzIgx1neD3BkaIxestU9MYYiU6i+AjiCfL8HktSoPsN3TM6SmWbCxGTTWnu8FSwijUD1O/P0CdpqzUG+FD1ZF56JC9W36HCYnKB/I6jLKc8jZ5G10wSa+s6bPZnJzeRUk4Ac+tXNfRq2WguQo6otqboo3z7VZXQ4JNbKoWXBOi8ue8zZRqWePUbONesAU+d41RuRczmrCE3+T6guEQTuKjiOjR9Z8X89g+bWuEo7Tyha8Rfivs7keYSd9wAAAABJRU5ErkJggg=="/>
+            </svg>
+            <span class="nav-list__span-hidden">Поиск по сайту</span>
+          </a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link nav-list__link--basket" href="basket.html">
+            <svg class="nav-list__svg nav-list__svg--basket" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18" viewBox="0 0 21 18">
+              <g>
+                <g opacity=".2">
+                  <image width="21" height="18"
+                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAASCAYAAAC0EpUuAAABgUlEQVQ4T52U4XHCMAyF38t1AFgAi9AB6AawAWwAE7RMUJiAdgLYoGwAG5QBSrBZoAzQi3oOSXqkCQT8V9JnS+/JxIUTGvMBYBCTbWutFREJVPcAVpFzw6pSVgUeRXqx6hqAjZxrZ3mhMR4qAdn/snZTVl8JbRuzJtAjOd5Zu8yKOyIjVV0osNk7168N7YgMVNW3vo2ceyoWhsZ8AuiSHO6sXRXjpS+91mLVaDL4P2id9nxx1Xh8jCLSfQAa2S2x6sILAXISANsqIWOgC9W5FzIgx1neD3BkaIxestU9MYYiU6i+AjiCfL8HktSoPsN3TM6SmWbCxGTTWnu8FSwijUD1O/P0CdpqzUG+FD1ZF56JC9W36HCYnKB/I6jLKc8jZ5G10wSa+s6bPZnJzeRUk4Ac+tXNfRq2WguQo6otqboo3z7VZXQ4JNbKoWXBOi8ue8zZRqWePUbONesAU+d41RuRczmrCE3+T6guEQTuKjiOjR9Z8X89g+bWuEo7Tyha8Rfivs7keYSd9wAAAABJRU5ErkJggg=="/>
+                </g>
               </g>
-            </g>
-          </svg>
-          Корзина: пока пуста
-        </a>
-      </li>
-    </ul>
-    <ul class="main-nav__list nav-list nav-list--ad">
-      <li class="nav-list__item">
-        <a class="nav-list__link" href="new.html">Новые поступления</a>
-      </li>
-      <li class="nav-list__item">
-        <a class="nav-list__link" href="sales.html">Распродажа</a>
-      </li>
-    </ul>
-    <p class="main-nav__delivery">Бесплатная доставка по всей России</p>
-  </nav>
+            </svg>
+            Корзина: пока пуста
+          </a>
+        </li>
+      </ul>
+      <ul class="main-nav__list nav-list nav-list--ad">
+        <li class="nav-list__item">
+          <a class="nav-list__link nav-list__link--ad" href="new.html">Новые поступления</a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link nav-list__link--ad" href="sales.html">Распродажа</a>
+        </li>
+      </ul>
+      <p class="main-nav__delivery">Бесплатная доставка по России</p>
+    </nav>
+  </div>
 </header>
 <main class="page-form">
   <div class="page-form__wrapper">
     <h1 class="page-form__title">Вязание на заказ</h1>
   </div>
+  <p class="page-form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы
+    свяжемся с вами, чтобы уточнить детали.</p>
   <form class="form" action="http://echo.htmlacademy.ru" method="post">
-    <div class="form__wrapper">
-      <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы
-        свяжемся с вами, чтобы уточнить детали.</p>
+    <div class="form__wrapper-item">
       <fieldset class="form__group">
-        <div class="form__group-wrapper form__group-wrapper--type">
+        <div class="form__group-wrapper">
           <p class="form__title">Тип</p>
           <ul class="form__list form__list--type">
             <li class="form__item">
               <input class="form__radio" type="radio" id="type-1" name="type" value="accessory" checked>
-              <label class="form__label-radio" for="type-1">Аксессуар для интерьера</label>
+              <label class="form__label form__label--radio" for="type-1">Аксессуар для интерьера</label>
             </li>
             <li class="form__item">
               <input class="form__radio" type="radio" id="type-2" value="toy" name="type">
-              <label class="form__label-radio" for="type-2">Детская игрушка</label>
+              <label class="form__label form__label--radio" for="type-2">Детская игрушка</label>
             </li>
           </ul>
         </div>
       </fieldset>
+    </div>
+    <div class="form__wrapper-item form__wrapper-item--bg-color">
       <fieldset class="form__group">
-        <div class="form__group-wrapper form__group-wrapper--color">
-          <p class="form__title">Цвет</p>
+        <div class="form__group-wrapper">
+          <p class="form__title form__title--color">Цвет</p>
           <ul class="form__list form__list--color">
             <li class="form__item">
               <input class="form__checkbox" type="checkbox" id="color-white" name="color-white" checked>
-              <label class="form__label-checkbox" for="color-white">Белый</label>
+              <label class="form__label form__label--checkbox" for="color-white">Белый</label>
             </li>
             <li class="form__item">
               <input class="form__checkbox" type="checkbox" id="color-grey" name="color-grey" checked>
-              <label class="form__label-checkbox" for="color-grey">Серый</label>
+              <label class="form__label form__label--checkbox" for="color-grey">Серый</label>
             </li>
             <li class="form__item">
               <input class="form__checkbox" type="checkbox" id="color-tiffany" name="color-tiffany">
-              <label class="form__label-checkbox" for="color-tiffany"> «Тиффани»</label>
+              <label class="form__label form__label--checkbox" for="color-tiffany"> «Тиффани»</label>
             </li>
             <li class="form__item">
               <input class="form__checkbox" type="checkbox" id="color-black" name="color-black">
-              <label class="form__label-checkbox" for="color-black">Черный</label>
+              <label class="form__label form__label--checkbox" for="color-black">Черный</label>
             </li>
             <li class="form__item">
               <input class="form__checkbox" type="checkbox" id="color-pink" name="color-pink">
-              <label class="form__label-checkbox" for="color-pink">Розовый</label>
+              <label class="form__label form__label--checkbox" for="color-pink">Розовый</label>
             </li>
             <li class="form__item">
               <input class="form__checkbox" type="checkbox" id="color-orange" name="color-orange">
-              <label class="form__label-checkbox" for="color-orange">Оранжевый</label>
+              <label class="form__label form__label--checkbox" for="color-orange">Оранжевый</label>
             </li>
           </ul>
         </div>
       </fieldset>
+    </div>
+    <div class="form__wrapper-item">
       <fieldset class="form__group">
-        <div class="form__group-wrapper form__group-wrapper--user">
+        <div class="form__group-wrapper">
           <p class="form__title">ФИО</p>
           <ul class="form__list form__list--user">
-            <li class="form__item">
-              <label class="form__label-name" for="user-name">Имя:</label>
+            <li class="form__item form__item--user">
+              <label class="form__label form__label--name" for="user-name">Имя:</label>
               <input class="form__field form__field--name" type="text" id="user-name" name="user-name"
                      placeholder="Введите ваше имя*"
                      required>
             </li>
-            <li class="form__item">
-              <label class="form__label-name" for="user-surname">Фамилия:</label>
+            <li class="form__item form__item--user">
+              <label class="form__label form__label--name" for="user-surname">Фамилия:</label>
               <input class="form__field form__field--name" type="text" id="user-surname" name="user-surname"
                      placeholder="Укажите фамилию*" required>
             </li>
-            <li class="form__item">
-              <label class="form__label-name" for="user-patronymic">Отчество:</label>
+            <li class="form__item form__item--user">
+              <label class="form__label form__label--name" for="user-patronymic">Отчество:</label>
               <input class="form__field form__field--name" type="text" id="user-patronymic" name="user-patronymic"
                      placeholder="Отчество, если желаете">
             </li>
           </ul>
         </div>
       </fieldset>
+    </div>
+    <div class="form__wrapper-item form__wrapper-item--bg-color">
       <fieldset class="form__group">
         <div class="form__group-wrapper form__group-wrapper--tel">
-          <p class="form__title">ТЕЛ</p>
+          <p class="form__title form__title--tel">ТЕЛ</p>
           <ul class="form__list form__list--tel">
             <li class="form__item">
-              <label class="form__label-tel visually-hidden" for="user-phone">Введите Ваш номер телефона</label>
+              <label class="form__label form__label--tel visually-hidden" for="user-phone">Введите Ваш номер
+                телефона</label>
               <input class="form__field form__field--tel" type="tel" id="user-phone" name="user-phone"
                      placeholder="+7 ХХХ ХХ ХХ*"
                      required>
-              <svg class="form__tel-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              <svg class="form__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                    width="25" height="24" viewBox="0 0 25 24">
                 <g>
                   <g opacity=".2">
@@ -164,16 +178,16 @@
         </div>
       </fieldset>
       <fieldset class="form__group">
-        <div class="form__group-wrapper form__group-wrapper--email">
-          <p class="form__title">E-mail</p>
+        <div class="form__group-wrapper">
+          <p class="form__title form__title--email">E-mail</p>
           <ul class="form__list form__list--email">
             <li class="form__item">
-              <label class="form__label-email visually-hidden" for="user-email">Введите Ваш e-mail</label>
+              <label class="form__label form__label--email" for="user-email">Введите Ваш e-mail</label>
               <input class="form__field form__field--email" type="email" id="user-email" name="user-email"
                      placeholder="Ваш Email*"
                      required>
 
-              <svg class="form__email-icon" xmlns="http://www.w3.org/2000/svg"
+              <svg class="form__svg" xmlns="http://www.w3.org/2000/svg"
                    xmlns:xlink="http://www.w3.org/1999/xlink"
                    width="32" height="21" viewBox="0 0 32 21">
                 <g>
@@ -187,22 +201,25 @@
           </ul>
         </div>
       </fieldset>
-      <fieldset class="form__group">
+    </div>
+    <div class="form__wrapper-item">
+      <div class="form__group">
         <div class="form__group-wrapper form__group-wrapper--wishes">
           <p class="form__title">ДОП</p>
           <ul class="form__list form__list--wishes">
             <li class="form__item">
-              <label class="form__label-wishes visually-hidden" for="user-wishes">Опишите пожелания к заказу</label>
+              <label class="form__label form__label--wishes" for="user-wishes">Опишите пожелания к заказу</label>
               <textarea class="form__field form__field--wishes" id="user-wishes"
                         name="user-wishes" placeholder="Опишите все ваши пожелания к заказу"></textarea>
             </li>
           </ul>
         </div>
-      </fieldset>
-      <div class="form__signature">
-        <p class="form__text">*Поля обязательны для заполнения</p>
-        <button class="form__submit button" type="submit">Отправить заказ</button>
+        <div class="form__signature">
+          <p class="form__text">*Поля обязательны для заполнения</p>
+          <button class="form__submit button" type="submit">Отправить заказ</button>
+        </div>
       </div>
+
     </div>
   </form>
 </main>
@@ -210,14 +227,25 @@
   <div class="page-footer__wrapper">
     <div class="page-footer__logo">
       <a class="page-footer__link" href="#">
-        <span class="visually-hidden">Интернет-магазин Мишка</span>
+        <svg class="page-footer__svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="102" height="34"
+             aria-label="Логотип Мишка"
+             viewBox="0 0 102 34">
+          <g>
+            <g>
+              <image width="102" height="34"
+                     xlink:href="data:image/png;base64,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"/>
+            </g>
+          </g>
+        </svg>
       </a>
     </div>
     <div class="page-footer__social social">
       <ul class="social__list">
         <li class="social__item">
           <a class="social__link social__link--instagram" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="21"
+            <svg class="social__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 width="22" height="21" aria-label="Мы в Инстаграме"
                  viewBox="0 0 22 21">
               <g>
                 <g>
@@ -226,12 +254,12 @@
                 </g>
               </g>
             </svg>
-            <span class="visually-hidden">Мы в Инстаграме</span>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link social__link--facebook" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="28"
+            <svg class="social__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 width="15" height="28" aria-label="Мы в Фейсбуке"
                  viewBox="0 0 15 28">
               <g>
                 <g>
@@ -240,12 +268,12 @@
                 </g>
               </g>
             </svg>
-            <span class="visually-hidden">Мы в Фейсбуке</span>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link social__link--twitter" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="20"
+            <svg class="social__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 width="23" height="20" aria-label="Мы в Твиттере"
                  viewBox="0 0 23 20">
               <g>
                 <g>
@@ -254,7 +282,6 @@
                 </g>
               </g>
             </svg>
-            <span class="visually-hidden">Мы в Твиттере</span>
           </a>
         </li>
       </ul>
@@ -262,8 +289,8 @@
     <div class="page-footer__copyright copyright">
       <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
         <b class="copyright__text">Разработано</b>
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="26.943" height="34.09">
+        <svg class="copyright__svg" xmlns="http://www.w3.org/2000/svg" width="26.943" height="34.09"
+             aria-label="Разработчик HTML Academy">
           <path fill="#63d1bb"
                 d="M13.62.017L13.472 0 0 1.412v24.661l13.473 8.017 13.43-7.99.042-.025V1.412L13.62.017zm11.399 12.11L13.495 5.334l-.001-.104-.087.05-.088-.056v.109L1.925 12.118V3.147l11.548-1.212L25.02 3.147v8.98zm-11.614-5.34L24.923 13.5l-4.479 2.64-7.093-4.221-.014 1.415 5.904 3.513-.86.507-5.03-2.992-.014 1.415 3.827 2.275-.782.523-3.031-1.787-.014 1.413 1.853 1.091-1.8 1.081-11.356-6.751 11.371-6.835zm-11.48 8.34l11.411 6.791.016 1.044-7.942-4.728-.015 1.416 7.979 4.795.018 1.076-7.973-4.74-.013 1.414 8.021 4.822.046.025 8.143-4.872-.011-5.177 3.415-2.036v10.021L13.472 31.85 1.925 24.979v-9.852z"/>
         </svg>
@@ -271,5 +298,7 @@
     </div>
   </div>
 </footer>
+<script src='js/picturefill.min.js' async></script>
+<script src='js/script.min.js'></script>
 </body>
 </html>
