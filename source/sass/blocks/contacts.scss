@@ -15,15 +15,12 @@
 }
 
 .contacts__list {
-  margin: 0;
-  padding-right: 30px;
+  @include ul-reset;
   display: flex;
-
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
   color: $color-text;
-  @include ul-reset;
 }
 
 .contacts__field {

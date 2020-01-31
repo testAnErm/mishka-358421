@@ -42,15 +42,16 @@
     margin-bottom: 25px;
   }
 
-  &--tel, &--email {
+  &--tel,
+  &--email {
     margin-bottom: 16px;
   }
 }
 
 .form__list {
+  @include ul-reset;
   display: flex;
   flex-direction: column;
-  @include ul-reset;
 }
 
 .form__item {
@@ -66,7 +67,9 @@
   display: none;
 }
 
-.form__label--tel, .form__label--email, .form__label--wishes {
+.form__label--tel,
+.form__label--email,
+.form__label--wishes {
   @include visually-hidden;
 }
 
@@ -76,7 +79,8 @@
   cursor: pointer;
 }
 
-.form__label--radio, .form__label--checkbox {
+.form__label--radio,
+.form__label--checkbox {
   position: relative;
   display: block;
   padding-top: 10px;
@@ -278,15 +282,10 @@
 
     &--tel {
       margin-bottom: 25px;
-      padding-bottom: 21px;
     }
 
     &--wishes {
       padding-bottom: 54px;
-    }
-
-    &--tel {
-      padding-bottom: 0;
     }
   }
 
@@ -353,7 +352,8 @@
       }
     }
 
-    &--tel, &--email {
+    &--tel,
+    &--email {
       margin-bottom: 0;
 
       width: 166px;

@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-position: 50% -18px;
 
-  @media(min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image: url("../img/hero-mobile@2x.jpg");
     background-size: 572px auto;
   }
@@ -27,9 +27,9 @@
 }
 
 .products__list {
+  @include ul-reset;
   display: flex;
   flex-direction: column;
-  @include ul-reset;
 }
 
 .products__link {
@@ -100,8 +100,7 @@
     background-image: url("../img/hero-tablet@1x.jpg");
     background-position: 50% -44px;
 
-    @media (min-resolution: 144dpi),
-    (min-resolution: 1.5dppx) {
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
       background-image: url("../img/hero-tablet@2x.jpg");
       background-size: 1150px auto;
     }
@@ -110,6 +109,7 @@
       @include banner;
     }
   }
+
   .products__title {
     padding-top: 112px;
 
@@ -122,10 +122,10 @@
   }
 
   .products__list {
+    @include container;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    @include container;
     min-width: 768px;
   }
 
