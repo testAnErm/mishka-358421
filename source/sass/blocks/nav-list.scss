@@ -1,5 +1,10 @@
 .nav-list__item {
   box-shadow: 0 1px 0 0 $grey-border, inset 0 1px 0 0 $grey-border;
+
+  &--search {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 .nav-list__link--catalog,
@@ -10,6 +15,7 @@
 .nav-list__svg {
   margin-right: 28px;
   fill: #231f20;
+  opacity: 0.2;
   cursor: pointer;
   transform: translateY(3px);
 
@@ -32,7 +38,7 @@
 
   &:hover,
   &:focus {
-    opacity: 0.6;
+    color: rgba(0, 0, 0, 0.6);
   }
 
   &:hover .nav-list__svg,
@@ -97,8 +103,6 @@
 
     &--search {
       padding: 35px 31px;
-      border-left: 1px solid rgba(0, 0, 0, 0.1);
-      border-right: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     &--basket {

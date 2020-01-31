@@ -245,6 +245,7 @@
   content: "";
   top: 10px;
   right: 6px;
+  opacity: 0.2;
 }
 
 .form__text {
@@ -400,6 +401,19 @@
 
     &::placeholder {
       font-size: 19px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-bottom: 2px solid $aquamarine;
+    }
+
+    &:hover + .form__svg,
+    &:focus + .form__svg,
+    &:active + .form__svg {
+      fill: $aquamarine;
+      opacity: 1;
     }
 
     &--radio:checked + .form__label--radio {
