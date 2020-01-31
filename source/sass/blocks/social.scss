@@ -38,6 +38,11 @@
     margin-left: 10px;
   }
 
+  &:hover .social__svg,
+  &:focus .social__svg {
+    fill: $aquamarine-link;
+  }
+
   &:active .social__svg {
     opacity: 0.3;
   }

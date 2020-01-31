@@ -39,6 +39,11 @@
     margin-right: 80px;
     height: 100%;
 
+    &:hover .page-footer__svg-logo,
+    &:focus .page-footer__svg-logo {
+      fill: $aquamarine-link;
+    }
+
     &:active .page-footer__svg-logo {
       opacity: 0.3;
     }

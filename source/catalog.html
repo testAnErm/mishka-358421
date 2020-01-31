@@ -4,9 +4,16 @@
   <meta charset="utf-8">
   <title>HTML Academy: Мишка</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
   <link href="css/style.min.css" rel="stylesheet">
 </head>
 <body>
+
+<div style="display: none">
+  <include src="build/img/sprite.svg"></include>
+</div>
+
 <header class="page-header page-header--bg-color">
   <div class="page-header__wrapper">
     <nav class="main-nav">
@@ -15,7 +22,7 @@
           <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
           <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
           <img class="main-nav__img-logo" src="img/logo-mobile.svg" width="86" height="35"
-               alt="Интернет-магазин «Мишка»">
+            alt="Интернет-магазин «Мишка»">
         </picture>
       </a>
       <button class="main-nav__toggle main-nav__toggle--closed main-nav__toggle--nojs">Открыть меню</button>
@@ -30,29 +37,13 @@
       <ul class="main-nav__list nav-list nav-list--right">
         <li class="nav-list__item nav-list__item--search">
           <a class="nav-list__link nav-list__link--search" href="search.html">
-            <svg class="nav-list__svg nav-list__svg--search" xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
-              <g>
-                <g opacity=".2">
-                  <image width="18" height="18"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABcklEQVQ4T7VU4VnCMBC9lwnYoAc6ACPABo5AJ8BOoE4gTmA3ECeADWQALUcnqAvk/BKSfmkA8Y/9l9zdy7t37wrKvhvmhaouiWiahdYGePkU2eY17ox4ycxTo/p6BiCvW1ugFJEuDXigALIholEIdqRakzHf/mxtQcAiKdxZYJ6CeaBJUXz0TFRra0yVv8jMbFTfkrxV07ZVBEfQxLVEjkXTtuU5DQLzkVF1zL1+FhiLiHiNEjZdCAx6z0FvmWf2COYe7lk5IM0vLzGK9/FxJdruD4d5ZHQEAp4akcdrIC4+LooNiGb/DHRF6JTppCj2zjU5IzfSu3wKl1ocTBmoGpGVV2YwBaITo6WAmXEHU46G7FkR0c4AVb5Tgclz7/5MirgiA6MFFjsl8p4CETtN8nYBlF8idcg5hpl5ZKx9IOD+Fwu4HVynexfB+u2PxX6nrF0qMPiNAHi3RLXbwYHg3oIoT4D+YkiXcwL218JzeQlY9wPrT+WEpr5E8AAAAABJRU5ErkJggg=="/>
-                </g>
-              </g>
-            </svg>
+            <svg class="nav-list__svg nav-list__svg--search" width="18" height="18" aria-label="Поиск по сайту"><use xlink:href="#icon-search"></use></svg>
             <span class="nav-list__span-hidden">Поиск по сайту</span>
           </a>
         </li>
         <li class="nav-list__item">
           <a class="nav-list__link nav-list__link--basket" href="basket.html">
-            <svg class="nav-list__svg nav-list__svg--basket" xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18" viewBox="0 0 21 18">
-              <g>
-                <g opacity=".2">
-                  <image width="21" height="18"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAASCAYAAAC0EpUuAAABgUlEQVQ4T52U4XHCMAyF38t1AFgAi9AB6AawAWwAE7RMUJiAdgLYoGwAG5QBSrBZoAzQi3oOSXqkCQT8V9JnS+/JxIUTGvMBYBCTbWutFREJVPcAVpFzw6pSVgUeRXqx6hqAjZxrZ3mhMR4qAdn/snZTVl8JbRuzJtAjOd5Zu8yKOyIjVV0osNk7168N7YgMVNW3vo2ceyoWhsZ8AuiSHO6sXRXjpS+91mLVaDL4P2id9nxx1Xh8jCLSfQAa2S2x6sILAXISANsqIWOgC9W5FzIgx1neD3BkaIxestU9MYYiU6i+AjiCfL8HktSoPsN3TM6SmWbCxGTTWnu8FSwijUD1O/P0CdpqzUG+FD1ZF56JC9W36HCYnKB/I6jLKc8jZ5G10wSa+s6bPZnJzeRUk4Ac+tXNfRq2WguQo6otqboo3z7VZXQ4JNbKoWXBOi8ue8zZRqWePUbONesAU+d41RuRczmrCE3+T6guEQTuKjiOjR9Z8X89g+bWuEo7Tyha8Rfivs7keYSd9wAAAABJRU5ErkJggg=="/>
-                </g>
-              </g>
-            </svg>
+            <svg class="nav-list__svg nav-list__svg--basket" width="21" height="19" aria-label="Добавить в корзину"><use xlink:href="#icon-cart"></use></svg>
             Корзина: пока пуста
           </a>
         </li>
@@ -80,16 +71,16 @@
           <a class="catalog__photo-link" href="#">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)"
-                      srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
+                srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)"
-                      srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
+                srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
               <source media="(min-width: 1150px)"
-                      srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
+                srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)"
-                      srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
+                srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
               <img class="catalog__photo" src="img/photo-hare-mobile@1x.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x"
-                   width="260" height="195" alt="Зайчик-попрыгайчик">
+                width="260" height="195" alt="Зайчик-попрыгайчик">
             </picture>
           </a>
           <div class="catalog__info">
@@ -100,15 +91,7 @@
             <div class="catalog__control">
               <span class="catalog__price">1 200 руб.</span>
               <a class="catalog__button" href="#">Добавить в корзину
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
-                     height="19" viewBox="0 0 20 19">
-                  <g>
-                    <g opacity=".2">
-                      <image width="20" height="19"
-                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAABK0lEQVQ4T62UYVHDQBBGXx1QBVAH1AF1AA6Kg6IAqqA4KA7AATigDmgVUAnMy9xmkkzuknTYP8ncbd592f32ZuTjCvgBvoCHlPYO3AEL4Nz36awAfAGegS3gu9G31kLkgKHO5Kaa3HoNzQFLSooq+4BDKor7fcBQ8Ao8ZWqcVdkFxuk+rd0xA7xJDrDTrY4L1AoCDJ+3yRKHggPcMs9888JCZ4F6zRP/I44CPeU3nbS8kPqdFM+jhvVCbgIGJqoWFMDo2htwmqjyGljHRAXQxtxPBHXTP5z5ANoUf9uIi2AsXzGG9a+aEhEq3RiyTHyjdRRSqXOxCbQO+zQdTsmY2AA74BGw/i1guN/7bzWGBnw27sdqqrqjF/YROia8bC1P7d8uUPn+xpRoXSJ/WZlFsmDaubsAAAAASUVORK5CYII="/>
-                    </g>
-                  </g>
-                </svg>
+                <svg class="catalog__svg" width="21" height="19" aria-label="Добавить в корзину"><use xlink:href="#icon-cart"></use></svg>
               </a>
             </div>
           </div>
@@ -117,16 +100,16 @@
           <a class="catalog__photo-link" href="#">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)"
-                      srcset="img/photo-bowl-desktop@1x.webp 1x, img/photo-bowl-desktop@2x.webp 2x">
+                srcset="img/photo-bowl-desktop@1x.webp 1x, img/photo-bowl-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)"
-                      srcset="img/photo-bowl-tablet@1x.webp 1x, img/photo-bowl-tablet@2x.webp 2x">
+                srcset="img/photo-bowl-tablet@1x.webp 1x, img/photo-bowl-tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/photo-bowl-mobile@1x.webp 1x, img/photo-bowl-mobile@2x.webp 2x">
               <source media="(min-width: 1150px)"
-                      srcset="img/photo-bowl-desktop@1x.jpg 1x, img/photo-bowl-desktop@2x.jpg 2x">
+                srcset="img/photo-bowl-desktop@1x.jpg 1x, img/photo-bowl-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)"
-                      srcset="img/photo-bowl-tablet@1x.jpg 1x, img/photo-bowl-tablet@2x.jpg 2x">
+                srcset="img/photo-bowl-tablet@1x.jpg 1x, img/photo-bowl-tablet@2x.jpg 2x">
               <img class="catalog__photo" src="img/photo-bowl-mobile@1x.jpg" srcset="img/photo-bowl-mobile@2x.jpg 2x"
-                   width="260" height="195" alt="Корзинка для белья">
+                width="260" height="195" alt="Корзинка для белья">
             </picture>
           </a>
           <div class="catalog__info">
@@ -137,15 +120,7 @@
             <div class="catalog__control">
               <span class="catalog__price">690 руб.</span>
               <a class="catalog__button" href="#">Добавить в корзину
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
-                     height="19" viewBox="0 0 20 19">
-                  <g>
-                    <g opacity=".2">
-                      <image width="20" height="19"
-                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAABK0lEQVQ4T62UYVHDQBBGXx1QBVAH1AF1AA6Kg6IAqqA4KA7AATigDmgVUAnMy9xmkkzuknTYP8ncbd592f32ZuTjCvgBvoCHlPYO3AEL4Nz36awAfAGegS3gu9G31kLkgKHO5Kaa3HoNzQFLSooq+4BDKor7fcBQ8Ao8ZWqcVdkFxuk+rd0xA7xJDrDTrY4L1AoCDJ+3yRKHggPcMs9888JCZ4F6zRP/I44CPeU3nbS8kPqdFM+jhvVCbgIGJqoWFMDo2htwmqjyGljHRAXQxtxPBHXTP5z5ANoUf9uIi2AsXzGG9a+aEhEq3RiyTHyjdRRSqXOxCbQO+zQdTsmY2AA74BGw/i1guN/7bzWGBnw27sdqqrqjF/YROia8bC1P7d8uUPn+xpRoXSJ/WZlFsmDaubsAAAAASUVORK5CYII="/>
-                    </g>
-                  </g>
-                </svg>
+                <svg class="catalog__svg" width="21" height="19" aria-label="Добавить в корзину"><use xlink:href="#icon-cart"></use></svg>
               </a>
             </div>
           </div>
@@ -154,16 +129,16 @@
           <a class="catalog__photo-link" href="#">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)"
-                      srcset="img/photo-toys-desktop@1x.webp 1x, img/photo-toys-desktop@2x.webp 2x">
+                srcset="img/photo-toys-desktop@1x.webp 1x, img/photo-toys-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)"
-                      srcset="img/photo-toys-tablet@1x.webp 1x, img/photo-toys-tablet@2x.webp 2x">
+                srcset="img/photo-toys-tablet@1x.webp 1x, img/photo-toys-tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/photo-toys-mobile@1x.webp 1x, img/photo-toys-mobile@2x.webp 2x">
               <source media="(min-width: 1150px)"
-                      srcset="img/photo-toys-desktop@1x.jpg 1x, img/photo-toys-desktop@2x.jpg 2x">
+                srcset="img/photo-toys-desktop@1x.jpg 1x, img/photo-toys-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)"
-                      srcset="img/photo-toys-tablet@1x.jpg 1x, img/photo-toys-tablet@2x.jpg 2x">
+                srcset="img/photo-toys-tablet@1x.jpg 1x, img/photo-toys-tablet@2x.jpg 2x">
               <img class="catalog__photo" src="img/photo-toys-mobile@1x.jpg" srcset="img/photo-toys-mobile@2x.jpg 2x"
-                   width="260" height="195" alt="Большая корзинка
+                width="260" height="195" alt="Большая корзинка
                     для игрушек">
             </picture>
           </a>
@@ -175,15 +150,7 @@
             <div class="catalog__control">
               <span class="catalog__price">1 500 руб.</span>
               <a class="catalog__button" href="#">Добавить в корзину
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
-                     height="19" viewBox="0 0 20 19">
-                  <g>
-                    <g opacity=".2">
-                      <image width="20" height="19"
-                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAABK0lEQVQ4T62UYVHDQBBGXx1QBVAH1AF1AA6Kg6IAqqA4KA7AATigDmgVUAnMy9xmkkzuknTYP8ncbd592f32ZuTjCvgBvoCHlPYO3AEL4Nz36awAfAGegS3gu9G31kLkgKHO5Kaa3HoNzQFLSooq+4BDKor7fcBQ8Ao8ZWqcVdkFxuk+rd0xA7xJDrDTrY4L1AoCDJ+3yRKHggPcMs9888JCZ4F6zRP/I44CPeU3nbS8kPqdFM+jhvVCbgIGJqoWFMDo2htwmqjyGljHRAXQxtxPBHXTP5z5ANoUf9uIi2AsXzGG9a+aEhEq3RiyTHyjdRRSqXOxCbQO+zQdTsmY2AA74BGw/i1guN/7bzWGBnw27sdqqrqjF/YROia8bC1P7d8uUPn+xpRoXSJ/WZlFsmDaubsAAAAASUVORK5CYII="/>
-                    </g>
-                  </g>
-                </svg>
+                <svg class="catalog__svg" width="21" height="19" aria-label="Добавить в корзину"><use xlink:href="#icon-cart"></use></svg>
               </a>
             </div>
           </div>
@@ -201,27 +168,17 @@
       <div class="production__player">
         <picture>
           <source type="image/webp" media="(min-width: 1150px)"
-                  srcset="img/video-desktop@1x.webp 1x, img/video-desktop@2x.webp 2x">
+            srcset="img/video-desktop@1x.webp 1x, img/video-desktop@2x.webp 2x">
           <source type="image/webp" media="(min-width: 768px)"
-                  srcset="img/video-tablet@1x.webp 1x, img/video-tablet@2x.webp 2x">
+            srcset="img/video-tablet@1x.webp 1x, img/video-tablet@2x.webp 2x">
           <source type="image/webp" srcset="img/video-mobile@1x.webp 1x, img/video-mobile@2x.webp 2x">
           <source media="(min-width: 1150px)" srcset="img/video-desktop@1x.jpg 1x, img/video-desktop@2x.jpg 2x">
           <source media="(min-width: 768px)" srcset="img/video-tablet@1x.jpg 1x, img/video-tablet@2x.jpg 2x">
           <img class="production__video-img" src="img/video-mobile@1x.jpg" srcset="img/video-mobile@2x.jpg 2x"
-               width="260" height="150" alt="Видео производства">
+            width="260" height="150" alt="Видео производства">
         </picture>
         <button class="production__button-play">
-          <svg class="production__svg-play" width="101" height="77" aria-label="Запустить видеоплеер">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="101" height="77"
-                 viewBox="0 0 101 77">
-              <g>
-                <g>
-                  <image width="101" height="77"
-                         xlink:href="data:image/png;base64,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"/>
-                </g>
-              </g>
-            </svg>
-          </svg>
+          <svg class="production__svg-play" width="101" height="77" aria-label="Запустить видеоплеер"><use xlink:href="#icon-play"></use></svg>
         </button>
       </div>
       <div class="production__description-wrapper">
@@ -236,61 +193,24 @@
   <div class="page-footer__wrapper">
     <div class="page-footer__logo">
       <a class="page-footer__link" href="#">
-        <svg class="page-footer__svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             width="102" height="34"
-             aria-label="Логотип Мишка"
-             viewBox="0 0 102 34">
-          <g>
-            <g>
-              <image width="102" height="34"
-                     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAAAiCAYAAACtFqwYAAAHTElEQVRoQ+1b3XlUNxA9WvMe0wAWLHk3FQRXEFwBpoLgCoAKbCqAVIBTAaYCnOd4iZYGsu/Bq3yjvVJGc0c/F6+dfCT3DfZe/cyZOTNzJBvc0DO39ggeLwBYAKuZwcFvzl3c0HTf3LDmpnY037PvATyO4xuDV5fOvbyp+b61cf8H5l+K6H8emLm1TwywT/h8AU6dc6sWVtba3RlwZDx+ALB7ZfDMOeda3035/daAAXC+WLqD2uK+t3bfA7trYH8G7NK7a8pPwMUX4EIzGhnpzt+GVd8pzTnfs+8APGF0e3Dp3HltjQEUj/cRTA9crA0OegC9NWBokTsAeZw1wBlP7qMc43F6+dkdy8U9tPaxX+MpTDBQAKP0GDHGw3v2xBs8n2JYPvZ8z3r+b2NQBeY6oFhr7Z1NIRTyrt9EGz0rGPyycO5ttpZg3DVOBsMABsfyJc1QQ9X1Jv3m8Xbx2T2L/yaKgMdP9G9j8EEmfjbvUVqgx5mZYckWnoqHNI/Bs7i+HsOK/e3yIqTn+wzIe/YNDOJ6aV9VIJnT0T4IlNpztli6w+RkczEZALdYuvutsJMRASAbuOP7Jo0Qta09qLpLkTTVsA+sfW48Tth6EqXO9+zv3GDe4PiTc6fa2oORN2uJT5GaKTp2PMhpo2OdGYNfic4NsPoTWO2s8YKDTIPODB5F1jHzPfuHpJCWJ9AgclO9gNK3g8E/sk0WnWHkAAaHC+fOhjU0qeihtS/9pp8aGXRKSd+bj0bOJJgki0Bpe8YGBEy2ueHDaqIO9OBBgGbPYulSMTEk5edrjx+HRJnGlN5HCfTT0j3SPDVWTVQErIEzXv30UJESMckJeoEZIoCiKz5FR3qwZz/GwqDlrLX5S8BkYSUNNuQPoqIiMKMcBCACp9BC+q1FgcLjcqdi0RTfq83VW6CM6J55draejdqR8m6rqf4qYFALwXFeCuvjEVMzyBaBaaoL1XWIqk4r6adESy/dRTC/DhgAVwZ3tfpcyS8012qxdHd7PFWjQg5qb9T0UFHDQYr5JxlPOmEhWrScd2Vwv9Z4jvInCwaisszruFG0KkVJ3KOkSv/RigqZH3hFsk1gFI9PZW6tMKA1TIkWDZiWsym2T3m4DoySlJVkGuwoE/hUYHoqwVGuk517oYktFQlaruTG7M0tBRCJcVoRk7UMnEqrwNCE0pNF1VFM/rcBTMvjGZerZXW1MBCJnMYqUXtrnhID1NZvlB/zcRjvabTAX+5N/lrYT21QB7ps5ohhrqyRjNVSFRilwOmospp9FbfX9YABVkNIrko0FiebCIwMYxqGFFpVpSVZR6q/EyJGrd60IoQo9Qvgdjx43xK3mGyhRcGoJ6wUCgXHcsbg56AQNCNmo3WFQ64ajUna04oEnkco+mYe71gz1sz5UsmVa6ffZwZBKPUbYTXoU97jKZdeWrLOIKomTYwvrBY1hWp1tC9aJ0kz/CBRvqQBQ7I3bYiLbitjcMi1omHwcI4RH5nAezwoSv3ZOMCK5H+/EUGTLB/eYdTa41Qa2g1gXgkJRw5RjJpahdv0uvwFNWLOQeHEOtjhG0I4iYlUSgtxcKS2Sg9qcXSBHiTlpX5JAaZEhbmjMXAVrZDvkyT5Y2mL0j5kg0mUBIPXKTrW+M6bzaEc/EDZTK3mrKNGzJXB4cCxxfMRyjuSh5WIkT1S87BMgqMl6FiGSmBKBpsiZGq0pURC1kzHb3pzHntfKtZJPVGBoZPGRqIPIl5LRJy6UC1iSgmaThp7Ov9CkuXSv9pg875M0/2gJPap+61VhRowXH3NykxmuHD2chvA0JzFBrHzJs4UhTnS9pXBI6Fky+OR0fnTtoEphpPqKaxK+6eAiVQ2IWLKe1QkKU2FUA4UR539rQFTOneJasC2gInn4dqFC62pjf3STQAj7xXU8oHMabcGzEAjIw5mhql2uq2FDr0OVV2xNNfoYeTtzDGasv+QY0ZjRHllSuXYOrVt7bensIm2pRxTDHMtcWZJsXHLpLXQUVWliJA1dbimzkojXDdPBSdV9DNeBLT2K9dU21sTGHYHmeSCTBZpUZlW2QnZJtO6Kv1BSeuSWplaxm6jgKAxBmqntfA2gh+Zd2l3HKCSDZvA1DpW2ZwpnKtRSJLC5b0wKEfDg1HljZqNRDS+AVM8ot5GxAQGGZ96piJgasTUHMa0ziQawMj8k+WIWg+i5q8SMELpjQd4LRqueSbLMfkeCmuIY2n0w9YzKWIU+6SIN1O8bpS8Os7MhadmOlPrblq86YnNvbANfeRamYxIlcoU5yv2aj0HdoqYG+isJ2dmzpLnLDdctgxXs8J1IwrPtcHjoOkYvI73tmrREjy+cR7OFGbSn86NwWt+N7h1jCDmp++JwtLdYjk+aXza2mXSFiJmjJgguff8qYgAOv3tD0VwVIzllWHNlqxNoF42O+641qVyxrfdm+ILVK7J8p9poRfe4IO8T9ZyGO33QHuApQvq2/gDqmjU1iX0r1krffMXVecasqN3KG4AAAAASUVORK5CYII="/>
-            </g>
-          </g>
-        </svg>
+        <svg class="page-footer__svg-logo" width="102" height="34" aria-label="Логотип Мишка"><use xlink:href="#icon-logo-footer"></use></svg>
       </a>
     </div>
     <div class="page-footer__social social">
       <ul class="social__list">
         <li class="social__item">
           <a class="social__link social__link--instagram" href="#">
-            <svg class="social__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="22" height="21" aria-label="Мы в Инстаграме"
-                 viewBox="0 0 22 21">
-              <g>
-                <g>
-                  <image width="22" height="21"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAACi0lEQVRIS5VV0XUaMRDcufg/pAFOkBSAKwjuwKkAU0FMBbErcFyBSQWBCiAV+AqIic4V0EC0ebOSQFzu2cm9xwMk7Wh2ZncP7527UtXPIjKRnkdFtn3r3TUAP9LaPogsMa5rLQ8RCCLTtNbwQltjYAi1AJcq0kBkoCJ7iDiJn+MDLDKwAXAHwFxVH05+A7cWFcLbUFXf3sTLBpVIE0KYCXDF7UTKieo2A/t8K4BPqvqdByvgIqhuRPUrASuRaRBZnSWGKuKC6ixnWMoWgclI9YuRAkaV6i9jCCxE9Y771E1EBmcig8DsCAjcaoyL/qguBZiqiC+loE7UjRrz4EBEskSeh+2u416fp0dPknl7GtIT2AiwpmkKmEFQ5dp1gVrGkkw0OwE3u7Y9z4fHzl2bNEeJGJAfEuB/XmQMA3DuvTdimSiBqafbtS0OwHX9KDH1y06+TQAuzFjVR9OSpam63D0/zwtgwaiuN9zsACsroZMyzbzdeX9DAMYl6Vjzfte2oxeBPzg3tRIrKqVg7QEsnrxfjeuajNkg1kyZWG44jJ27oZ5Zpwx8qOE+7/NaLC9rDgIfSNHkDEygn95v/we46FIz3znncg/8BXzYjMX/sZgbXe7NQYpC+6MUdc32pft7Os6yGQ+HD5YidU6DJ5UYwfcC3Kd1ymCV4r3f95qX25mBPJQlMiDVlVVAVa1VdZZqmN15AnoiRS43HmJqCsw5vX7H4h9UcRZ069kuC1W1yEx5cZrtcTIWwEzFB2BeqW5oDIGfvOfw+aenyPJYFRYZm2Jq84EpR1b37LJd2757DX08HHIS2hyBc27CwDIov0XStw2WLNVL4MXkY6uL8CYFJr2vmddodvbTa2z9BwN6l1Hrp9baAAAAAElFTkSuQmCC"/>
-                </g>
-              </g>
-            </svg>
+            <svg class="social__svg" width="22" height="22" aria-label="Мы в Инстаграме"><use xlink:href="#icon-instagram"></use></svg>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link social__link--facebook" href="#">
-            <svg class="social__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="15" height="28" aria-label="Мы в Фейсбуке"
-                 viewBox="0 0 15 28">
-              <g>
-                <g>
-                  <image width="15" height="28"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAcCAYAAAC+lOV/AAAB4klEQVQ4T52U8VXbQAzGv88TZAIsQgegExQ2gAkKE9BMEDIB2YAyQbMBYYJmgGLkCZoB2lOfzhbYTlIS7j3/cb77STrpk4gtS0ROi5RuQF4AGA2urAEsEznjkD0RuTKz++5/A5a+Z2PotD1b9+ATkQsz+5EPzeapKGaq6p56a1yWLwCkBx+X5SOBMwCLRE5UVYPKTwH8GW542kbyZrQDI5GfVXU1FvkGsxv3NAhgscuzVnV9nL2Z/czOgCXJJwDrAlj9AVbbYXJWqd62Xu/Q7odv3wpXdZ3/vybwI/AnkbNk9ugJrOr6UkT83SPPRS9hflCkNAV5FZ47sJfLv5y0gjz/pbrkuCx/b6iInFSq82ywSViozEsnkQOHrU3EyhrrbvnhWfX7hjiOju49MpLXfv4GkxMvgQNehv8pKzTgsMuxUU6sTnZd68nsa6u8fCNykkuS6wmMzOxLvmQ2Bym5c8zuWnBtLgzyyTWwIc+xyG3o1g89vIAj1F6A3c0A1oK8/ms2dc9Rnn1heEnaphgdDHuo0RiHwrmzQgfvwoMRlPW8N9zR8ms9Y+S867kLe/O/1PV5TJeD4NDv3nC3ziGKD8G5xt5lMfzaNt0pku7A25hX5OWz6mInPMy2jx82vd2DwsA/N8tRSHeMqMsAAAAASUVORK5CYII="/>
-                </g>
-              </g>
-            </svg>
+            <svg class="social__svg" width="15" height="28" aria-label="Мы в Фейсбуке"><use xlink:href="#icon-fb"></use></svg>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link social__link--twitter" href="#">
-            <svg class="social__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="23" height="20" aria-label="Мы в Твиттере"
-                 viewBox="0 0 23 20">
-              <g>
-                <g>
-                  <image width="23" height="20"
-                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAUCAYAAABmvqYOAAACSUlEQVRIS61V0XXaQBCckfMfV4AOnP/YFQQqMFRgqCCmAocKjCsAV2A6CB2A/21xooFQQHKbt8edOAwK9nvRD0/SaXZ2d2Yg/vPVzPOfCrkqyw4jtjHmMhNZOPLKWrt8b01jzLm1dqO/mcgEQJfk4NXaaQXeajTuQd4CWDqyox8cK+BBgFuIfAdwnpzR8/4+EtyB5/lCgA2BdijQs9batEDoTtvegHzMgLkHAy4hchfA9d0DgWUKLiBHBKyI3PuD5MgB46TtFURmLsuGZ0DXidwIOVASX4xpOxE/73il4L8AWEf2lBlFnkIXFRMtWpRlUz+uxkgOC2vH/lmeL6BdKOstUcAYY7JtVQORabFeD/T5hTHd0IXRewHmqoLITN//AeZxPy1jfkDkuijLKz3jwZOWZm7b5t4yL4zpi8g1ycdXa2d1Sgrgd0VZetx0LCudsyObdUo5Jc9WozEB2T8AD+wm6VhOgR1Rks4cB+BhIcrez/ejZoojATArylJFsRuL2jaoAxAZuywbfWQ8rTz3xEj24l5Sh/p5aeWMfPgNLN8LHlT1pFKOUt1jnmbDzgU7DdfNP3znxZCRnRdrvWv3wOMDb3HnbjRn0hZr5ReNIzIu1uvhgUPVRJ8A44C2iHyLzjwlyyi9t+aqmLfyXG2/n27b/NCF7gVXyioCa1QEZR2cZXJIVTLVUPrXIoObNbdVsj6L6vLfqyVotMpnbZPbWH2u2Dr3GWQ3+kBVdSwqDmYewkv/BPpw7quQptL8m01q4TNylKqibtl/AcirWOn00ma2AAAAAElFTkSuQmCC"/>
-                </g>
-              </g>
-            </svg>
+            <svg class="social__svg" width="24" height="21" aria-label="Мы в Твиттере"><use xlink:href="#icon-twitter"></use></svg>
           </a>
         </li>
       </ul>
@@ -298,11 +218,7 @@
     <div class="page-footer__copyright copyright">
       <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
         <b class="copyright__text">Разработано</b>
-        <svg class="copyright__svg" xmlns="http://www.w3.org/2000/svg" width="26.943" height="34.09"
-             aria-label="Разработчик HTML Academy">
-          <path fill="#63d1bb"
-                d="M13.62.017L13.472 0 0 1.412v24.661l13.473 8.017 13.43-7.99.042-.025V1.412L13.62.017zm11.399 12.11L13.495 5.334l-.001-.104-.087.05-.088-.056v.109L1.925 12.118V3.147l11.548-1.212L25.02 3.147v8.98zm-11.614-5.34L24.923 13.5l-4.479 2.64-7.093-4.221-.014 1.415 5.904 3.513-.86.507-5.03-2.992-.014 1.415 3.827 2.275-.782.523-3.031-1.787-.014 1.413 1.853 1.091-1.8 1.081-11.356-6.751 11.371-6.835zm-11.48 8.34l11.411 6.791.016 1.044-7.942-4.728-.015 1.416 7.979 4.795.018 1.076-7.973-4.74-.013 1.414 8.021 4.822.046.025 8.143-4.872-.011-5.177 3.415-2.036v10.021L13.472 31.85 1.925 24.979v-9.852z"/>
-        </svg>
+        <svg class="copyright__svg" width="27" height="34" aria-label="Разработчик HTML Academy"><use xlink:href="#icon-logo-htmlacademy"></use></svg>
       </a>
     </div>
   </div>

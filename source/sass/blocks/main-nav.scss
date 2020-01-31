@@ -60,14 +60,14 @@
       top: 18px;
       width: 41px;
       height: 40px;
-      background: url(../img/menu-close.svg) no-repeat 50% 50%;
+      background: url("../img/menu-close.svg") no-repeat 50% 50%;
     }
 
     &--closed {
       top: 21px;
       width: 40px;
       height: 34px;
-      background: url(../img/menu-open.svg) no-repeat 50% 50%;
+      background: url("../img/menu-open.svg") no-repeat 50% 50%;
     }
 
     &--nojs {
@@ -140,4 +140,3 @@
     padding-top: 17px;
   }
 }
-

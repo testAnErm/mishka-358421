@@ -11,6 +11,19 @@
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+
+  &:hover .copyright__svg,
+  &:focus .copyright__svg {
+    fill: $aquamarine-link;
+  }
+
+  &:active .copyright__svg {
+    opacity: 0.3;
+  }
+
+  &:active .copyright__text {
+    opacity: 0.3;
+  }
 }
 
 .copyright__text {
@@ -18,6 +31,10 @@
   font-size: 19px;
   line-height: 18px;
   color: $black;
+}
+
+.copyright__svg {
+  fill: $aquamarine-lighter;
 }
 
 @media (min-width: $tablet-width) {
